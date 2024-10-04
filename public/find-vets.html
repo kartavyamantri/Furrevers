@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Vets - Furrevers</title>
+    <link rel="stylesheet" href="find-vets.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>🐾 Find Vets 🐾</h1>
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html" id="login-link">Login</a </nav>
+                <a href="register.html" id="register-link">Register</a>
+        </header>
+
+        <main>
+            <section class="intro">
+                <h2>Locate a Vet Near You</h2>
+                <p>Enter your location to find the best vets near you:</p>
+                <form id="vetLocationForm">
+                    <input type="text" id="vetLocationInput" placeholder="Enter your city or zip code" required>
+                    <button type="submit">Search</button>
+                </form>
+            </section>
+
+            <section class="vet-list" id="vetList">
+                <!-- Vet details will be displayed here -->
+            </section>
+        </main>
+
+        <footer>
+            <p>🐶🐱 Adopt, Love, and Cherish a Furry Friend! 🐾</p>
+            <p>&copy; 2023 Furrevers</p>
+        </footer>
+    </div>
+
+    <script src="find-vets.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>

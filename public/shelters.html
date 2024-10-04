@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Shelters - Furrevers</title>
+    <link rel="stylesheet" href="shelters.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>🐾 Explore Shelters 🐾</h1>
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html" id="login-link">Login</a>
+                <a href="register.html" id="register-link">Register</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="location-form">
+                <h2>Find a Shelter Near You</h2>
+                <p>Please enter your location to find the nearest shelters:</p>
+                <form id="locationForm">
+                    <input type="text" id="locationInput" placeholder="Enter your city or zip code" required>
+                    <button type="submit">Search</button>
+                </form>
+            </section>
+
+            <section class="shelters-list" id="sheltersList">
+                <!-- Shelter details will be displayed here -->
+            </section>
+        </main>
+
+        <footer>
+            <p>🐶🐱 Adopt, Love, and Cherish a Furry Friend! 🐾</p>
+            <p>&copy; 2023 Furrevers</p>
+        </footer>
+    </div>
+
+    <script src="shelters.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>
