@@ -24,41 +24,15 @@
         <main>
             <section class="pets-list">
                 <h2 class="intro">Available Pets</h2>
-                <div class="pet">
-                    <h3>Dog</h3>
-                    <img src="./Assets/dog.jpeg" alt="Dog">
-                    <p>A friendly dog looking for a loving home.</p>
-                    <a class="btn btn-primary" href="#">Adopt Now</a>
+                <div id="pets-container">
+                    <!-- Pets will be dynamically populated here -->
                 </div>
-                <div class="pet">
-                    <h3>Cat</h3>
-                    <img src="./Assets/cat.jpeg" alt="Cat">
-                    <p>An adorable cat ready to bring joy to your family.</p>
-                    <a class="btn btn-primary" href="#">Adopt Now</a>
-                </div>
-                <div class="pet">
-                    <h3>Rabbit</h3>
-                    <img src="./Assets/rabbit.jpeg" alt="Rabbit">
-                    <p>A cute rabbit looking for a cozy hutch.</p>
-                    <a class="btn btn-primary" href="#">Adopt Now</a>
-                </div>
-                <div class="pet">
-                    <h3>Parrot</h3>
-                    <img src="./Assets/parrot.jpeg" alt="Parrot">
-                    <p>A colorful parrot seeking a loving owner.</p>
-                    <a class="btn btn-primary" href="#">Adopt Now</a>
-                </div>
-                <div class="pet">
-                    <h3>Hamster</h3>
-                    <img src="./Assets/hamster.jpeg" alt="Hamster">
-                    <p>A cute hamster looking for a cozy habitat.</p>
-                    <a class="btn btn-primary" href="#">Adopt Now</a>
-                </div>
-                <div class="pet">
-                    <h3>Turtle</h3>
-                    <img src="./Assets/turtle.jpeg" alt="Turtle">
-                    <p>A gentle turtle looking for a peaceful tank.</p>
-                    <a class="btn btn-primary" href="#">Adopt Now</a>
+
+                <!-- Pagination Controls -->
+                <div id="pagination-controls">
+                    <button id="prev-page" disabled>Previous</button>
+                    <span id="page-info"></span>
+                    <button id="next-page">Next</button>
                 </div>
             </section>
         </main>
@@ -68,6 +42,8 @@
             <p>&copy; 2023 Furrevers</p>
         </footer>
     </div>
+
+    <script src="repository.js"></script>
     <script src="auth.js"></script>
 </body>
 

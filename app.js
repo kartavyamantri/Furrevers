@@ -91,27 +91,39 @@ app.post('/login', (req, res) => {
 });
 
 
-// Add Pet
-app.post('/add-pet', (req, res) => {
-    const { name, species, breed, age, description } = req.body;
-    const sql = 'INSERT INTO pets (name, species, breed, age, description) VALUES (?, ?, ?, ?, ?)';
-    db.query(sql, [name, species, breed, age, description], (err, results) => {
+
+app.get('/api/pets', (req, res) => {
+    const limit = parseInt(req.query.limit) || 6;  // Pets per page (default: 6)
+    const page = parseInt(req.query.page) || 1;    // Current page (default: 1)
+    const offset = (page - 1) * limit;             // Calculate the offset
+
+    const sql = `SELECT * FROM pets LIMIT ? OFFSET ?`; // Pagination query
+    db.query(sql, [limit, offset], (err, results) => {
         if (err) {
-            return res.status(500).send('Error adding pet');
+            console.error('Error fetching pets:', err);
+            return res.status(500).send('Error fetching pets');
         }
-        res.status(200).send('Pet added successfully');
+
+        // Query to get the total number of pets for pagination control
+        db.query('SELECT COUNT(*) AS total FROM pets', (countErr, countResult) => {
+            if (countErr) {
+                console.error('Error counting pets:', countErr);
+                return res.status(500).send('Error counting pets');
+            }
+
+            const totalPets = countResult[0].total;
+            res.json({
+                pets: results,
+                totalPages: Math.ceil(totalPets / limit), // Calculate total number of pages
+                currentPage: page
+            });
+        });
     });
 });
 
-// Get Available Pets
-app.get('/pets', (req, res) => {
-    const sql = 'SELECT * FROM pets';
-    db.query(sql, (err, results) => {
-        if (err) {
-            return res.status(500).send('Error fetching pets');
-        }
-        res.status(200).json(results);
-    });
+// Serve repository.html
+app.get('/repository', (req, res) => {
+    res.sendFile(__dirname + '/repository.html');
 });
 
 // Start the server
