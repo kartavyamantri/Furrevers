@@ -13,7 +13,7 @@ function fetchPets(page = 1) {
                 const petCard = `
                             <div class="pet">
                                 <h3>${pet.name}</h3>
-                                <img src="./Assets/${pet.species.toLowerCase()}.jpeg" alt="${pet.name}">
+                                <img src="./Assets/${pet.species.toLowerCase()}.jpeg" alt="${pet.species.toLowerCase()}">
                                 <p>${pet.description}</p>
                                 <a class="btn btn-primary" href="#">Adopt Now</a>
                             </div>
